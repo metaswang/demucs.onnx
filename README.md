@@ -100,7 +100,7 @@ $ python -m pip install -r ./scripts/requirements.txt
 
 Convert Demucs PyTorch model to ONNX:
 ```
-$ python ./scripts/convert-pth-to-onnx.py ./demucs-onnx
+$ python ./scripts/convert-pth-to-onnx.py ./onnx-models
 ...
 Model successfully converted to ONNX format at onnx-models/htdemucs.onnx
 ```
