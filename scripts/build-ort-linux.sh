@@ -2,8 +2,9 @@
 
 # copied from <https://github.com/olilarkin/ort-builder>
 
-ONNX_CONFIG="${1:-./onnx-models/required_operators_and_types.config}"
+ONNX_CONFIG="${1:-./onnx-models/htdemucs.required_operators_and_types.config}"
 CMAKE_BUILD_TYPE=MinSizeRel
+echo ONNX_CONFIG: $ONNX_CONFIG
 
 build_arch() {
   ONNX_CONFIG="$1"
@@ -23,7 +24,8 @@ build_arch() {
   --disable_rtti \
   --disable_exceptions \
   --include_ops_by_config "$ONNX_CONFIG" \
-  --enable_reduced_operator_type_support
+  --enable_reduced_operator_type_support \
+  --allow_running_as_root
 
   BUILD_DIR=./build-ort/${CMAKE_BUILD_TYPE}
 }
